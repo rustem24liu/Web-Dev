@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:moccasin;
+}
+
+.to-do-list{
+    border: 1px solid;
+    border-radius: 15px;
+    width: 600px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: mintcream;
+    box-shadow: 4px 4px darkgreen;
+}
+.new-todo{
+    margin: 25px;
+    display: block;
+    margin-bottom: 50px;
+}
+.input{
+    height: 25px;
+    width: 450px;
+    border-radius: 5px;
+    border: .9px solid gray
+}
+.add{
+    height: 30px;
+    width: 80px;
+
+}
