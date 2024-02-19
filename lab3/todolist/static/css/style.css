@@ -30,3 +30,10 @@ body{
     width: 80px;
 
 }
+
+.todo li.checked label {
+    text-decoration: line-through;
+}
+.completed {
+    text-decoration: line-through;
+  }

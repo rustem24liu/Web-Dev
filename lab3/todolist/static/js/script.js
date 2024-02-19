@@ -43,6 +43,7 @@ function displayMessages(){
         
     })
 
+
 }
 
 todo.addEventListener('change', function(event){
@@ -77,4 +78,10 @@ todo.addEventListener('click', function(event){
         console.log("somethin ing th")
     }
 
+});
+todo.addEventListener('change', function(event){
+    if(event.target.type === 'checkbox') {
+        const label = event.target.nextElementSibling; // Get the label element next to the checkbox
+        label.classList.toggle('completed', event.target.checked); // Toggle the completed class based on the checkbox state
+    }
 });
