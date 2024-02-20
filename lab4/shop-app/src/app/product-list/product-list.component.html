@@ -1,28 +1,45 @@
+
 <p class="date">{{date}}</p>
 <h2>{{message}}</h2>
 
 <!--<ul>-->
 <!--    <p *ngFor="let item of items"><li>{{item}}</li></p>-->
 <!--</ul>-->
+<div class="content">
+    <div *ngFor="let product of products">
+        <div class="box">
 
-<div *ngFor="let product of products">
 
-    <h3>
-        <a [title]="product.name + ' details'">
-            {{product.name}}
-        </a>
-    </h3>
+            <div style="border: none; width: 100%; height: auto;">
+                <img [src]="product.img">
+            </div>
+            <h3>
+                <a [title]="product.name + ' details'">
+                    {{ getNameSlice(product.name) }}
+                </a>
+            </h3>
+            <h4>
+                {{product.price}}KZT
+            </h4>
 
-    <p *ngIf = "product.description">
-        Description: {{product.description}}
-    </p>
+            <p *ngIf="product.description">
+                <strong>Description:</strong> {{ getDescriptionSlice(product.description) }}
+            </p>
+            <p>Rating:{{ product.rating}}</p>
 
-    <button type = "button" (click)="share()">
-        Share
-    </button>
+            <button type="button" (click)="share(product.link)">
+                Share to Whatsapp
+            </button>
+            <button type="button" (click)="sharetg(product.link)">
+                Share on Telegram
+            </button>
 
+            <app-product-alerts [product]="product" (notify)="onNotify()">
+            </app-product-alerts>
+        </div>
+
+    </div>
 </div>
-
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

@@ -19,8 +19,25 @@ export class ProductListComponent {
   }
   products = [...products];
 
-  share() {
-    window.alert('The product has been shared!');
+
+  share(productLink: string) {
+    const shareMessage = `Check out: ${productLink}`;
+    const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage)}`;
+    window.location.href = whatsappLink;
+  }
+  sharetg(productLink: string){
+
+  }
+
+  onNotify(){
+    window.alert('You will be notified when the product goes on sale');
+  }
+
+  getDescriptionSlice(description: string): string{
+    return description ? description.slice(0, 120) + '...' : '';
+  }
+  getNameSlice(name: string): string{
+    return name ? name.slice(0, 33) + '...' : '';
   }
 }
 

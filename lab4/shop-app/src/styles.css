@@ -3,6 +3,8 @@
 * {
   font-family: 'Roboto', Arial, sans-serif;
   color: #616161;
+  /*margin: 0;*/
+  /*display: b  lock;*/
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -135,6 +137,10 @@ app-top-bar h1 {
   margin-bottom: 8px;
   border-radius: 2px;
   background-color: #EEEEEE;
+}
+
+.content{
+  /*display:;*/
 }
 
 
