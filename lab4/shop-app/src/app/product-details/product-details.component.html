@@ -1,1 +1,9 @@
-<p>product-details works!</p>
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+    <img [src]="product.img" alt="">
+    <h3>{{ product.name }}</h3>
+    <h4>{{ product.price}}kzt</h4>
+    <p>{{ product.description }}</p>
+    <button type = "button" (click)="CartService.addToCart(product)">BUY</button>
+</div>

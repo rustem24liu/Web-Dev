@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { products } from '../products';
+import {Product, products} from '../products';
 
 @Component({
   selector: 'app-product-list',
@@ -10,6 +10,7 @@ import { products } from '../products';
 export class ProductListComponent {
   message: string;
   date: string = '';
+  indexOfImage = 0;
   items = ['Almaty', 'Uralsk', 'Aktobe', 'Tashkent']
   constructor() {
     this.message = "Products"
@@ -25,8 +26,10 @@ export class ProductListComponent {
     const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage)}`;
     window.location.href = whatsappLink;
   }
-  sharetg(productLink: string){
-
+  share2(productLink: string){
+    const shareMessage = `Check out: ${productLink}`
+    const telegram = `https://t.me/share/url?url=${encodeURIComponent(shareMessage)}`
+    window.location.href = telegram
   }
 
   onNotify(){
@@ -39,6 +42,22 @@ export class ProductListComponent {
   getNameSlice(name: string): string{
     return name ? name.slice(0, 33) + '...' : '';
   }
+
+
+  nextImage(product: Product) {
+    if (product.indexOfImage < product.img.length - 1) {
+      product.indexOfImage += 1;
+    }
+  }
+
+  prevImage(product: Product) {
+    if (product.indexOfImage > 0) {
+      product.indexOfImage -= 1;
+    }
+  }
+
+  protected readonly console = console;
+  protected readonly window = window;
 }
 
 

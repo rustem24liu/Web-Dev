@@ -19,9 +19,28 @@
 }
 img{
     height: 250px;
-
+    /*width: fit-content;*/
     /*width: ;*/
 }
+.share{
+    margin: 5px;
+}
+.image-buttons{
+    background-color: #BDBDBD;
+    border: 1px solid black;
+    border-radius: 5px;
+    /*width: 70px;*/
+    text-align: center;
+    margin: 10px;
+}
+.button-row{
+    text-align: center;
+}
+.last{
+    width: 190px;
+}
+
+
 
 /*
 Copyright Google LLC. All Rights Reserved.
