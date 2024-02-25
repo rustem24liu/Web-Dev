@@ -22,6 +22,18 @@ export class ProductDetailsComponent {
 
     this.product = products.find(product => product.id == productIdFormRoute);
   }
+  nextImage(product: Product) {
+    if (product.indexOfImage < product.img.length - 1) {
+      product.indexOfImage += 1;
+    }
+  }
+
+  prevImage(product: Product) {
+    if (product.indexOfImage > 0) {
+      product.indexOfImage -= 1;
+    }
+  }
 
   protected readonly products = products;
+  protected readonly indexedDB = indexedDB;
 }
