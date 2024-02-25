@@ -56,6 +56,11 @@ img{
     text-align: center;
     margin-top: -7px;
 }
+.delete{
+    margin-left: 280px;
+    margin-top: -60px;
+
+}
 
 .delete-button{
     background-color: white;
