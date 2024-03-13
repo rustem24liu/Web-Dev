@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <h3>Album Detail</h3>
+  <div *ngIf="loaded; else loading" class="form-control">
+    <div>
+      <p>Album id: {{ album.id }}</p>
+    </div>
+
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" [(ngModel)]="album.title">
+    </div>
+
+    <a [routerLink]="['/albums', album.id, 'photos']">Photos</a>
+
+    <div>
+      <button class="btn btn-outline-warning" (click)="updateAlbum()">Update</button>
+      <button class="btn btn-outline-secondary" (click)="goBack()">Return Back</button>
+    </div>
+  </div>
+  <ng-template #loading>
+    <p class="text-muted">Page loading...</p>
+  </ng-template>
+</div>
