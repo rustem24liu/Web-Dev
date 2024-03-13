@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {categories} from "../category.service";
+import {Component, Input} from '@angular/core';
+import {Category} from "../category.service";
 
 @Component({
   selector: 'app-main-page',
@@ -7,6 +7,6 @@ import {categories} from "../category.service";
   styleUrl: './main-page.component.css'
 })
 export class MainPageComponent {
+  @Input() categories: Category | undefined;
 
-  categories = categories;
 }

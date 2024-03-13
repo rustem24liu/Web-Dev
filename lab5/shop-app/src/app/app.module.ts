@@ -25,7 +25,7 @@ import { ProductByCategoryComponent } from "./product-by-category/product-by-cat
     RouterModule.forRoot([
       {path: '', component: MainPageComponent},
       {path: 'category', component: CategoryComponent},
-      {path: 'category/:categoryId', component: ProductByCategoryComponent},
+      {path: 'category/:categoryId', component: ProductListComponent},
       {path: 'products', component: ProductListComponent},
       {path: 'products/:productId', component: ProductDetailsComponent},
       {path: 'cart', component: CartComponent},

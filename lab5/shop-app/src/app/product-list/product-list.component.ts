@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import {Product, products} from '../products';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +14,7 @@ export class ProductListComponent {
   date: string = '';
   indexOfImage = 0;
   items = ['Almaty', 'Uralsk', 'Aktobe', 'Tashkent']
-  constructor() {
+  constructor(private route: ActivatedRoute) {
     this.message = "Products"
     setInterval(()=> {
       this.date = new Date().toTimeString();
@@ -21,7 +22,20 @@ export class ProductListComponent {
   }
   products = [...products];
 
+  ngOnInit(){
+    const routeParams = this.route.snapshot.paramMap;
+    console.log(routeParams)
+    const CategoryIdFormRoute = Number(routeParams.get("categoryId"));
+    console.log(CategoryIdFormRoute)
 
+    if( CategoryIdFormRoute === 0){
+      this.products = products
+    }
+    else{
+      this.products = products.filter(products => products.categoryId == CategoryIdFormRoute);
+    }
+
+  }
   like(product: Product){
     this.liked = true;
     product.likes++;

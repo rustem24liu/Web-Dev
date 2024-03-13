@@ -22,7 +22,7 @@ export class ProductByCategoryComponent {
   products: Product[] = [];
 
   ngOnInit(){
-    const routeParams = this.route.snapshot.paramMap;
+    const routeParams  = this.route.snapshot.paramMap;
     const CategoryIdFormRoute = Number(routeParams.get("categoryId"));
 
     this.products = products.filter(products => products.categoryId == CategoryIdFormRoute);
