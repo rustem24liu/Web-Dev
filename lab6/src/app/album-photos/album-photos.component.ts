@@ -31,6 +31,7 @@ export class AlbumPhotosComponent implements OnInit{
     this.photosService
       .getPhotos(this.albumId)
       .subscribe((data) => (this.photos = data));
+
   }
   goBack() {
     this.router.navigate(['/albums', this.albumId]);
